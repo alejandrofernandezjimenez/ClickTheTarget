@@ -1,40 +1,23 @@
 <!-- src/app/components/game-over/game-over.component.html -->
 <div class="menu-container">
-  <!-- Cazador al pie (heredado) -->
   <img src="assets/hunter-menu.png" alt="Cazador" class="hunter">
 
-  <!-- Logo centrado -->
   <img src="assets/logo.png" alt="Click The Target" class="logo">
 
   <!-- Caja de botones -->
   <div class="menu-box">
     <div class="menu-title">GAME OVER :(</div>
+    <div class="stats-inside">
+      <div class="stats-label">SCOREBOARD</div>
+      <div class="stats-value"><span>Points:</span>  {{ finalScore }}</div>
+      <div class="stats-value"><span>Hunt Time:</span> {{ huntTime }}</div>
+      <div class="stats-value"><span>Best Score:</span> {{ bestScore }}</div>
+    </div>
 
     <button class="menu-item" (click)="reiniciar()">
       <img src="assets/icon-restart.png" alt="Reiniciar" class="icon">
-      Reiniciar
+      Restart
     </button>
 
-    <button class="menu-item" (click)="verPuntuaciones()">
-      <img src="assets/icon-trophy.png" alt="Puntuaciones" class="icon">
-      Puntuaciones
-    </button>
-
-    <button class="menu-item" (click)="abrirOpciones()">
-      <img src="assets/icon-settings.png" alt="Opciones" class="icon">
-      Opciones
-    </button>
-
-    <button class="menu-item" (click)="salir()">
-      <img src="assets/icon-exit.png" alt="Salir" class="icon">
-      Salir
-    </button>
-  </div>
-
-  <!-- Estadísticas al pie -->
-  <div class="stats-bar">
-    <span>Mejor Puntuación: {{ bestScore }}</span>
-    <span>Puntuación: {{ finalScore }}</span>
-    <span>Tiempo de caza: {{ huntTime }} seg</span>
   </div>
 </div>

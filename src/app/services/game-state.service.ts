@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class GameStateService {
-  startingTime = 60;           // tiempo de caza inicial
+  startingTime = 10;
   private _score = new BehaviorSubject<number>(0);
   private _time  = new BehaviorSubject<number>(this.startingTime);
   score$ = this._score.asObservable();

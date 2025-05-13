@@ -11,18 +11,20 @@
 
   <!-- Patos sólo en navegador -->
   <ng-container *ngIf="isBrowser">
-    <img *ngFor="let d of ducks"
-         class="duck {{d.type}}"
-         [ngStyle]="{ left: d.x + '%', top: d.y + '%' }"
-         (click)="clickDuck(d)"
-         src="assets/duck-{{d.type}}.png"
-         alt="Pato {{d.type}}">
+    <img *ngFor="let d of ducks" class="duck {{d.type}}" [ngStyle]="{ left: d.x + '%', top: d.y + '%' }"
+      (click)="clickDuck(d)" src="assets/duck-{{d.type}}.png" alt="Pato {{d.type}}">
   </ng-container>
 
   <!-- Leyenda inferior -->
   <div class="legend">
     <div><img src="assets/duck-yellow.png" alt=""><span>+1 pt / +2s</span></div>
-    <div><img src="assets/duck-red.png"    alt=""><span>+5 pt / +1s</span></div>
-    <div><img src="assets/duck-blue.png"   alt=""><span>-3 pt</span></div>
+    <div><img src="assets/duck-red.png" alt=""><span>+5 pt / +1s</span></div>
+    <div><img src="assets/duck-blue.png" alt=""><span>-3 pt</span></div>
   </div>
+
+  <!-- Hunter en juego, abajo derecha -->
+  <img src="assets/hunter-game.png" alt="Cazador" class="hunter-game">
 </div>
+<audio id="bg-audio" src="assets/background-music.mp3" autoplay loop preload="auto" style="display: none;">
+  Tu navegador no soporta audio de fondo.
+</audio>

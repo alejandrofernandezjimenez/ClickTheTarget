@@ -24,13 +24,8 @@ export class MenuComponent {
     // this.router.navigate(['/game-over']);
   }
 
-  abrirOpciones() {
+  abrirReglas() {
     // aquí podrías abrir un modal o navegar
-    this.router.navigate(['/options']);
-  }
-
-  salir() {
-    // cierra la ventana (sólo en entornos desktop)
-    window.close();
+    this.router.navigate(['/rules']);
   }
 }

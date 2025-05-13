@@ -8,8 +8,8 @@ import { GameStateService }                       from '../../services/game-stat
   selector:   'app-game-over',
   standalone: true,
   imports:   [ CommonModule, RouterModule ],
-  templateUrl: './game-over.component.html',
-  styleUrls:   ['./game-over.component.scss']
+  templateUrl:'./game-over.component.html',
+  styleUrls:  ['./game-over.component.scss']
 })
 export class GameOverComponent implements OnInit {
   finalScore = 0;
@@ -17,19 +17,29 @@ export class GameOverComponent implements OnInit {
   huntTime   = 0;
   isBrowser  = false;
 
+  // Audio for game over
+  private gameOverAudio = new Audio('assets/sound-game-over.mp3');
+
   constructor(
     private game: GameStateService,
     private router: Router,
     @Inject(PLATFORM_ID) platformId: Object
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
+    if (this.isBrowser) {
+      this.gameOverAudio.load();
+    }
   }
 
   ngOnInit(): void {
     this.huntTime   = this.game.startingTime;
     this.finalScore = this.game.score;
 
+    // Play game-over sound once on enter
     if (this.isBrowser) {
+      this.gameOverAudio.currentTime = 0;
+      this.gameOverAudio.play();
+
       const prev = Number(localStorage.getItem('bestScore') || '0');
       if (this.finalScore > prev) {
         localStorage.setItem('bestScore', String(this.finalScore));
@@ -42,8 +52,18 @@ export class GameOverComponent implements OnInit {
     }
   }
 
-  reiniciar(): void { this.router.navigate(['/game']); }
-  verPuntuaciones(): void { this.router.navigate(['/scores']); }
-  abrirOpciones(): void { this.router.navigate(['/options']); }
-  salir(): void { if (this.isBrowser) window.close(); }
+  reiniciar(): void {
+    this.router.navigate(['/game']);
+  }
+  verPuntuaciones(): void {
+    this.router.navigate(['/scores']);
+  }
+  abrirOpciones(): void {
+    this.router.navigate(['/options']);
+  }
+  salir(): void {
+    if (this.isBrowser) {
+      window.close();
+    }
+  }
 }

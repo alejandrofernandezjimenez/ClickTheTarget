@@ -1,0 +1,24 @@
+<!-- src/app/components/rules/rules.component.html -->
+<div class="menu-container">
+  <img src="assets/hunter-menu.png" alt="Hunter" class="hunter">
+  <img src="assets/logo.png" alt="Click The Target" class="logo">
+
+  <div class="menu-box">
+    <div class="menu-title">GAME RULES</div>
+
+    <div class="rules-text">
+      <p><strong>Objective:</strong> Click as many ducks as you can before time runs out.</p>
+      <p><strong>Yellow Duck:</strong> +1 point, +2 seconds.</p>
+      <p><strong>Red Duck:</strong> +5 points, +1 second.</p>
+      <p><strong>Blue Duck:</strong> -3 points, no time bonus.</p>
+      <p>Each duck disappears after a few seconds if not clicked.</p>
+      <p>Game ends when your timer reaches zero.</p>
+      <p>Good luck and have fun!</p>
+    </div>
+
+    <button class="menu-item" (click)="backToMenu()">
+      <img src="assets/icon-exit.png" alt="Back to Menu" class="icon">
+      Back to Menu
+    </button>
+  </div>
+</div>
