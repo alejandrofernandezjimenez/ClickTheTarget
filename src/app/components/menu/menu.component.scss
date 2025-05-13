@@ -1,0 +1,64 @@
+.menu-container {
+  position: relative;
+  width: 100%;
+  height: 97.7vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 1rem;
+  font-family: sans-serif;
+}
+
+.logo {
+  width: 250px;
+  max-width: 80%;
+}
+.hunter {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 150px;
+  pointer-events: none;
+}
+.menu-box {
+  background: rgba(0, 0, 0, 0.75);
+  border: 3px solid var(--color-secondary);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.menu-title {
+  font-family: 'Pixelify Sans', sans-serif;
+  color: var(--color-white);
+  text-align: center;
+  font-size: 2.1rem;
+  letter-spacing: 2px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.75);
+  border: 3px solid var(--color-secondary);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-size: 2rem;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+.menu-item:hover {
+  background: var(--color-primary);
+  transform: scale(1.02);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}

@@ -1,0 +1,83 @@
+/* src/app/components/game/game.component.scss */
+.game-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;  /* Sin scroll */
+  background: none;  /* El fondo global viene de body en style.css */
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.hud {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--color-white);
+  text-shadow: 1px 1px var(--color-black);
+  font-size: 1.2rem;
+}
+
+.logo-small {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 80px;
+  max-width: 15%;
+}
+
+.duck {
+  position: absolute;
+  width: 50px;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.duck:hover {
+  transform: scale(1.2);
+}
+
+.legend {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2rem;
+  color: var(--color-white);
+  text-shadow: 1px 1px var(--color-black);
+  font-size: 1rem;
+}
+.legend div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.legend img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive: Móvil */
+@media (max-width: 480px) {
+  .hud { font-size: 1rem; }
+  .logo-small { width: 60px; }
+  .duck { width: 40px; }
+  .legend img { width: 20px; height: 20px; }
+  .legend { font-size: 0.9rem; gap: 1rem; }
+}
+
+/* Responsive: Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hud { font-size: 1.1rem; }
+  .logo-small { width: 70px; }
+  .duck { width: 45px; }
+  .legend img { width: 22px; height: 22px; }
+  .legend { font-size: 1rem; gap: 1.5rem; }
+}
+
+/* Responsive: Desktop */
+@media (min-width: 769px) {
+  /* valores por defecto ya definidos */
+}

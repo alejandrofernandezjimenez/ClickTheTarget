@@ -1,0 +1,28 @@
+<!-- src/app/components/game/game.component.html -->
+<div class="game-container">
+  <!-- HUD -->
+  <div class="hud">
+    <div>Puntos: {{ game.score$ | async }}</div>
+    <div>Tiempo: {{ game.time$ | async }} seg</div>
+  </div>
+
+  <!-- Logo pequeño arriba -->
+  <img src="assets/logo.png" alt="Logo" class="logo-small">
+
+  <!-- Patos sólo en navegador -->
+  <ng-container *ngIf="isBrowser">
+    <img *ngFor="let d of ducks"
+         class="duck {{d.type}}"
+         [ngStyle]="{ left: d.x + '%', top: d.y + '%' }"
+         (click)="clickDuck(d)"
+         src="assets/duck-{{d.type}}.png"
+         alt="Pato {{d.type}}">
+  </ng-container>
+
+  <!-- Leyenda inferior -->
+  <div class="legend">
+    <div><img src="assets/duck-yellow.png" alt=""><span>+1 pt / +2s</span></div>
+    <div><img src="assets/duck-red.png"    alt=""><span>+5 pt / +1s</span></div>
+    <div><img src="assets/duck-blue.png"   alt=""><span>-3 pt</span></div>
+  </div>
+</div>

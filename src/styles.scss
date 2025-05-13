@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Pixelify Sans';
+  src: url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Variables de color*/
+:root {
+  --color-primary: #00B1FF;
+  --color-secondary: #49DB00;
+  --color-accent: #FDC300;
+  --color-white: #F3FAF6;
+  --color-black: #121212;
+  --color-red: #D33323;
+}
+
+/* La tipografía */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Pixelify Sans', sans-serif;
+  color: var(--color-black);
+}
+
+/* Estilo para el video de fondo */
+#bg-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  /* para que no interfiera clicks */
+}
