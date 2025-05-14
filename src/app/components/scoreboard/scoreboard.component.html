@@ -1,0 +1,24 @@
+<!-- src/app/components/scoreboard/scoreboard.component.html -->
+<div class="menu-container">
+  <img src="assets/hunter-menu.png" alt="Hunter" class="hunter">
+  <img src="assets/logo.png" alt="Click The Target" class="logo">
+
+  <div class="menu-box">
+    <div class="menu-title">SCOREBOARD</div>
+
+    <ul class="score-list">
+      <li *ngFor="let s of scores; let i = index">
+        <span class="rank">{{ i + 1 }}.</span>
+        <span class="value">{{ s }} pts</span>
+      </li>
+      <li *ngIf="scores.length === 0" class="no-scores">
+        No scores available
+      </li>
+    </ul>
+
+    <button class="menu-item" (click)="backToMenu()">
+      <img src="assets/icon-exit.png" alt="Back" class="icon">
+      Back to Menu
+    </button>
+  </div>
+</div>

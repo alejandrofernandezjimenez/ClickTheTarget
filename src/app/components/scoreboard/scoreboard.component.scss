@@ -1,4 +1,5 @@
-/* src/app/components/rules/rules.component.scss */
+/* src/app/components/scoreboard/scoreboard.component.scss */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 .menu-container {
   position: relative;
@@ -10,10 +11,9 @@
   align-items: center;
   justify-content: start;
   padding-top: 1rem;
-
-  font-family: 'Pixelify Sans', sans-serif;
-    background: url('/assets/bg.png') no-repeat center bottom;
+  background: url('/assets/bg.png') no-repeat center bottom;
   background-size: cover;
+  font-family: 'Pixelify Sans', sans-serif;
 }
 
 .hunter {
@@ -25,8 +25,9 @@
 }
 
 .logo {
-  width: 150px;
+  width: 250px;
   max-width: 80%;
+  margin-bottom: 2rem;
 }
 
 .menu-box {
@@ -49,13 +50,29 @@
   color: var(--color-white);
 }
 
-.rules-text {
-  color: var(--color-white);
-  font-size: 1rem;
-  line-height: 1.5;
+.score-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-.rules-text p {
-  margin: 0.5rem 0;
+
+.score-list li {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-white);
+  font-size: 1.2rem;
+}
+
+.score-list .rank {
+  font-weight: bold;
+}
+
+.score-list .no-scores {
+  text-align: center;
+  color: var(--color-accent);
 }
 
 .menu-item {
@@ -85,16 +102,16 @@
 /* Responsive */
 @media (max-width: 480px) {
   .menu-title { font-size: 1.5rem; }
-  .rules-text { font-size: 0.9rem; }
+  .score-list li { font-size: 1rem; }
   .menu-item { font-size: 1.5rem; padding: 0.6rem 0.8rem; }
   .icon { width: 24px; height: 24px; }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   .menu-title { font-size: 1.8rem; }
-  .rules-text { font-size: 1rem; }
+  .score-list li { font-size: 1.1rem; }
   .menu-item { font-size: 1.8rem; padding: 0.7rem 1rem; }
   .icon { width: 28px; height: 28px; }
 }
 @media (min-width: 769px) {
-  /* Defaults apply */
+  /* Defaults */
 }

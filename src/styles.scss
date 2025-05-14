@@ -9,7 +9,6 @@
   --color-red: #D33323;
 }
 
-/* La tipografía */
 body {
   margin: 0;
   padding: 0;
@@ -18,6 +17,5 @@ body {
   overflow: hidden;
   font-family: 'Pixelify Sans', sans-serif;
   color: var(--color-black);
-  background: url('/assets/bg.png') no-repeat center bottom;
-  background-size: cover;
 }
+
